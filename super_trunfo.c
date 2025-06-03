@@ -18,7 +18,7 @@ printf("Estado (A a H), Código, Nome da Cidade, População, Área, PIB, Númer
 
     printf("Digite os dados da Carta 01:\n\n"); // Solicita ao usuário a inserção dos dados da carta 01
 
-    printf("Estado (A a H):\n");
+    printf("Digite o Estado (A a H):\n");
     scanf("%s", estado);
 
     printf("Digite o Código:\n");
@@ -44,7 +44,7 @@ printf("Estado (A a H), Código, Nome da Cidade, População, Área, PIB, Númer
     printf("Digite o Estado (A a H):\n");
     scanf("%s", estado2);
 
-    printf("Digite o Codigo:\n");
+    printf("Digite o Código:\n");
     scanf("%d", &codigo2);
 
     printf("Digite nome da Cidade:\n");
@@ -62,9 +62,7 @@ printf("Estado (A a H), Código, Nome da Cidade, População, Área, PIB, Númer
     printf("Digite o Número de Pontos Turísticos:\n");
     scanf("%d", &pturistico2);
 
-    // Formulas do PIB per capita e densidade populacional
-    // PIB per capita = PIB / População
-    // Densidade populacional = População / Área
+    // Fórmulas do PIB per capita e densidade populacional, PIB per capita = PIB / População e Densidade populacional = População / Área
     pibpercapita = pib / (float)pop;
     pibpercapita2 = pib2 / (float)pop2;
     densidade_pop = pop / area;
