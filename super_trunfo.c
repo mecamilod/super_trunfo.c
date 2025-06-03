@@ -8,11 +8,13 @@ int main() {
     double pibpercapita, pibpercapita2; // variáveis para o cálculo do PIB per capita
     float densidade_pop, densidade_pop2; // variáveis para o cálculo da densidade populacional
     
-    // início do programa
+    // Abertura do programa
 
     printf("Super Trunfo - Cartas de Cidades Brasileiras\n\n"); // Imprime o título do jogo.
-    printf("Seja bem vindo(a) ao Super Trunfo, as cartas são compostas por:\n"); // Explica as características das cartas.
-    printf("Estado (A a H), Código, Nome da Cidade, População, Área, PIB, Número de Pontos Turísticos, Densidade Populacional e PIB per capita.\n\n"); // Explica as características das cartas.
+    
+printf("Seja bem vindo(a) ao Super Trunfo, as cartas são compostas por:\n"); // Explica as características das cartas.
+    
+printf("Estado (A a H), Código, Nome da Cidade, População, Área, PIB, Número de Pontos Turísticos, Densidade Populacional e PIB per capita.\n\n"); // Explica as características das cartas.
 
     printf("Digite os dados da Carta 01:\n\n"); // Solicita ao usuário a inserção dos dados da carta 01
 
