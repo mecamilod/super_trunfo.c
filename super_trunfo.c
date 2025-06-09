@@ -12,10 +12,12 @@ int main() {
 
     printf("Super Trunfo - Cartas de Cidades Brasileiras\n\n"); // Imprime o título do jogo.
     
-printf("Seja bem vindo(a) ao Super Trunfo, as cartas são compostas por:\n"); // Explica as características das cartas.
+    printf("Seja bem vindo(a) ao Super Trunfo, as cartas são compostas por:\n"); // Explica as características das cartas.
     
-printf("Estado (A a H), Código, Nome da Cidade, População, Área, PIB, Número de Pontos Turísticos, Densidade Populacional e PIB per capita.\n\n"); // Explica as características das cartas.
-
+    printf("Estado (A a H), Código, Nome da Cidade, População, Área, PIB, Número de Pontos Turísticos, Densidade Populacional e PIB per capita.\n\n"); // Explica as características das cartas.
+                                             
+                                                //NÍVEL NOVATO - CRIAR DUAS CARTAS DO SUPER TRUNFO
+    
     printf("Digite os dados da Carta 01:\n\n"); // Solicita ao usuário a inserção dos dados da carta 01
 
     printf("Digite o Estado (A a H):\n");
@@ -61,7 +63,8 @@ printf("Estado (A a H), Código, Nome da Cidade, População, Área, PIB, Númer
 
     printf("Digite o Número de Pontos Turísticos:\n");
     scanf("%d", &pturistico2);
-
+                                        //NÍVEL AVENTUREIRO - CALCULAR PIB E DENSIDADE POPULACIONAL.
+    
     // Fórmulas do PIB per capita e densidade populacional, PIB per capita = PIB / População e Densidade populacional = População / Área
     pibpercapita = pib / (float)pop;
     pibpercapita2 = pib2 / (float)pop2;
@@ -76,5 +79,15 @@ printf("Estado (A a H), Código, Nome da Cidade, População, Área, PIB, Númer
     printf(" Densidade Populacional: %.2f hab/km²\n", densidade_pop2);
     printf(" PIB per capita: %.2f reais\n", pibpercapita2);
 
+                                         //NÍVEL MESTRE - CALCULAR O SUPER PODER E COMPARAR
+    float super_poder1, super_poder2;
+    float densidadeinv = -densidade_pop;
+    
+//Super Poder = soma de todos os atributos numéricos (população, área, PIB, número de pontos turísticos, PIB per capita e o inverso da densidade populacional – quanto menor a densidade, maior o "poder"
+    
+    super_poder1 = pop + area +pib + pturistico + pibpercapita + (float)densidadeinv
+    
+        printf ("\n O super poder da carta %s%d é: %2.f\n", estado, codigo, super_poder1;
+    
     return 0;
 } // Fim do programa.
