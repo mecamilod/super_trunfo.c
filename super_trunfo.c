@@ -20,50 +20,41 @@ int main() {
     
     printf("Digite os dados da Carta 01:\n\n"); // Solicita ao usuário a inserção dos dados da carta 01
 
-    printf("Digite o Estado (A a H):\n");
+    printf("Estado (A a H):\n");
     scanf("%s", estado);
-
-    printf("Digite o Código:\n");
+    printf("Código:\n");
     scanf("%d", &codigo);
-
-    printf("Digite nome da Cidade:\n");
+    getchar(); // Limpa o buffer antes de ler string
+    printf("Nome da Cidade:\n");
     scanf(" %[^\n]", cidade);
-
-    printf("Digite a População:\n");
+    printf("População:\n");
     scanf("%d", &pop);
-
-    printf("Digite a Área:\n");
+    printf("Área:\n");
     scanf("%f", &area);
-
-    printf("Digite o PIB:\n");
+    printf("PIB:\n");
     scanf("%f", &pib);
-
-    printf("Digite o Número de Pontos Turísticos:\n");
+    printf("Número de Pontos Turísticos:\n");
     scanf("%d", &pturistico);
-
+    
     printf("\nDigite os dados da Carta 02:\n");  // Solicita ao usuário a inserção dos dados da carta 02
 
-    printf("Digite o Estado (A a H):\n");
+    printf("Estado (A a H):\n");
     scanf("%s", estado2);
-
-    printf("Digite o Código:\n");
+    printf("Código:\n");
     scanf("%d", &codigo2);
-
-    printf("Digite nome da Cidade:\n");
+    getchar(); // Limpa o buffer antes de ler string
+    printf("Nome da Cidade:\n");
     scanf(" %[^\n]", cidade2);
-
-    printf("Digite a População:\n");
+    printf("População:\n");
     scanf("%d", &pop2);
-
-    printf("Digite a Área:\n");
+    printf("Área:\n");
     scanf("%f", &area2);
-
-    printf("Digite o PIB:\n");
+    printf("PIB:\n");
     scanf("%f", &pib2);
-
-    printf("Digite o Número de Pontos Turísticos:\n");
+    printf("Número de Pontos Turísticos:\n");
     scanf("%d", &pturistico2);
-                                        //NÍVEL AVENTUREIRO - CALCULAR PIB E DENSIDADE POPULACIONAL.
+    
+                                            //NÍVEL AVENTUREIRO - CALCULAR PIB E DENSIDADE POPULACIONAL.
     
     // Fórmulas do PIB per capita e densidade populacional, PIB per capita = PIB / População e Densidade populacional = População / Área
     pibpercapita = pib / (float)pop;
@@ -80,14 +71,24 @@ int main() {
     printf(" PIB per capita: %.2f reais\n", pibpercapita2);
 
                                          //NÍVEL MESTRE - CALCULAR O SUPER PODER E COMPARAR
-    float super_poder1, super_poder2;
-    float densidadeinv = -densidade_pop;
     
-//Super Poder = soma de todos os atributos numéricos (população, área, PIB, número de pontos turísticos, PIB per capita e o inverso da densidade populacional – quanto menor a densidade, maior o "poder"
-    
-    super_poder1 = pop + area +pib + pturistico + pibpercapita + (float)densidadeinv
-    
-        printf ("\n O super poder da carta %s%d é: %2.f\n", estado, codigo, super_poder1;
-    
-    return 0;
-} // Fim do programa.
+    float densidadeinv1 = -densidade_pop;
+    float densidadeinv2 = -densidade_pop2;
+    float super_poder1 = pop + area + pib + pturistico + pibpercapita + densidadeinv1;
+    float super_poder2 = pop2 + area2 + pib2 + pturistico2 + pibpercapita2 + densidadeinv2;
+
+    printf("\nO super poder da carta %s%d é: %.2f\n", estado, codigo, super_poder1);
+    printf("O super poder da carta %s%d é: %.2f\n", estado2, codigo2, super_poder2);
+
+    printf("\n---Comparação de Atributos:---\n"); // Comparação dos atributos e exibição dos resultados (1 = Carta 1 vence, 0 = Carta 2 vence)
+
+    printf("População: Carta %d venceu (%d)\n", pop > pop2 ? 1 : 2, pop > pop2 ? 1 : 0);
+    printf("Área: Carta %d venceu (%d)\n", area > area2 ? 1 : 2, area > area2 ? 1 : 0);
+    printf("PIB: Carta %d venceu (%d)\n", pib > pib2 ? 1 : 2, pib > pib2 ? 1 : 0);
+    printf("Pontos Turísticos: Carta %d venceu (%d)\n", pturistico > pturistico2 ? 1 : 2, pturistico > pturistico2 ? 1 : 0);
+    printf("Densidade Populacional: Carta %d venceu (%d)\n", densidade_pop < densidade_pop2 ? 1 : 2, densidade_pop < densidade_pop2 ? 1 : 0);
+    printf("PIB per capita: Carta %d venceu (%d)\n", pibpercapita > pibpercapita2 ? 1 : 2, pibpercapita > pibpercapita2 ? 1 : 0);
+    printf("Super Poder: Carta %d venceu (%d)\n", super_poder1 > super_poder2 ? 1 : 2, super_poder1 > super_poder2 ? 1 : 0);
+
+    return 0; //Finaliza o programa.
+}
